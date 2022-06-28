@@ -6,9 +6,10 @@ public class MouseRotate : MonoBehaviour
 {
     public float MouseSensitivity;
     float yRotation;
+    public Transform playerBody;  //THIS IS IMPORTANT!!
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -23,11 +24,12 @@ public class MouseRotate : MonoBehaviour
         MouseY = MouseY * MouseSensitivity * Time.deltaTime;
 
         yRotation -= MouseY; //for inverting the mouse!!
-        Mathf.Clamp(yRotation, -90, 90); //clamp it between them
+        //also this yRoataion is actually xRoataion, because you are rotating against the x-axis
+        yRotation= Mathf.Clamp(yRotation, -90, 90); //clamp it between them
 
         transform.localRotation = Quaternion.Euler(yRotation, 0, 0);
 
-        transform.Rotate(Vector3.up * MouseX);  //YAYAYAY ITS WORKING!!!
+        playerBody.Rotate(Vector3.up * MouseX);  //YAYAYAY ITS WORKING!!!
 
     }
 }
