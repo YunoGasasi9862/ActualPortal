@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
+    public CharacterController controller;
+    public float speed = 20.0f;
     void Start()
     {
         
@@ -13,6 +15,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        float X = Input.GetAxis("Horizontal");
+        float Z = Input.GetAxis("Vertical");
+
+
+        Vector3 move = transform.right * X + transform.forward * Z; //forward is dealt by Z
+
+
+        controller.Move(move * speed * Time.deltaTime);
     }
 }

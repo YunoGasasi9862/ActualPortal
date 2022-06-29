@@ -425,7 +425,6 @@ GameObject:
   - component: {fileID: 1143599111}
   - component: {fileID: 1143599114}
   - component: {fileID: 1143599113}
-  - component: {fileID: 1143599112}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -448,20 +447,6 @@ Transform:
   m_Father: {fileID: 1296230551}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1143599112
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143599110}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1143599113
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -522,6 +507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1296230551}
   - component: {fileID: 1296230552}
+  - component: {fileID: 1296230553}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -558,3 +544,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5d1366dc68ff724fb84b3a5ff5cff83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 1296230553}
+  speed: 20
+--- !u!143 &1296230553
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296230550}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2.7
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1.37, z: 0}
