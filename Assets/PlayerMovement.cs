@@ -12,7 +12,8 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     public Transform groundcheck;
     public LayerMask ground;
-    public float GroundDistance = 0.4;
+    public float GroundDistance = 0.4f;
+    bool isGrounder = false;
     void Start()
     {
         
@@ -24,8 +25,9 @@ public class PlayerMovement : MonoBehaviour
         float X = Input.GetAxis("Horizontal");
         float Z = Input.GetAxis("Vertical");
 
+        isGrounder = Physics.CheckSphere(groundcheck.position, GroundDistance, ground); //this is the isGrounder bool
 
-        if(velocity.y <0)
+        if(isGrounder && velocity.y <0)
         {
             velocity.y = -2f;
         }
@@ -34,9 +36,13 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
+        if(Input.GetKey(KeyCode.Space))
+        {
+
+        }
 
 
-        velocity.y += gravity * -2f* Time.deltaTime;
+        velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
 
