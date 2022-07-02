@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask ground;
     public float GroundDistance = 0.4f;
     bool isGrounder = false;
+    public float jumpHeight=3f;
     void Start()
     {
         
@@ -38,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetKey(KeyCode.Space))
         {
-
+            velocity.y=Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
 
