@@ -37,9 +37,9 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
-        if(Input.GetKey(KeyCode.Space))
+       if(Input.GetKey(KeyCode.Space))
         {
-            velocity.y=Mathf.Sqrt(jumpHeight * -2f * gravity);
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
 
