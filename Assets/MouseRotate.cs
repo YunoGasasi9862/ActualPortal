@@ -28,11 +28,15 @@ public class MouseRotate : MonoBehaviour
         yRotation -= MouseY;
         //yRotation -= MouseY; //for inverting the mouse!!
         //also this yRoataion is actually xRoataion, because you are rotating against the x-axis
-        yRotation= Mathf.Clamp(yRotation, -90, 90); //clamp it between them
+        //yRotation= Mathf.Clamp(yRotation, -90, 90); //clamp it between them
 
+        //transform.localRotation = Quaternion.Euler(yRotation, 0, 0);
+
+        yRotation = Mathf.Clamp(yRotation, -90, 90);
         transform.localRotation = Quaternion.Euler(yRotation, 0, 0);
 
-        playerBody.Rotate(Vector3.up * MouseX);  //YAYAYAY ITS WORKING!!!
+        // playerBody.Rotate(Vector3.up * MouseX);  //YAYAYAY ITS WORKING!!!
+        playerBody.Rotate(Vector3.up * MouseX); //so mouse rotations on xxis
 
     }
 }
