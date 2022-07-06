@@ -36,7 +36,11 @@ public class MouseRotate : MonoBehaviour
         transform.localRotation = Quaternion.Euler(yRotation, 0, 0);
 
         // playerBody.Rotate(Vector3.up * MouseX);  //YAYAYAY ITS WORKING!!!
-        playerBody.Rotate(Vector3.up * MouseX); //so mouse rotations on xxis
+        //so mouse rotations on xxis
+        //yRotation -= MouseY;
+        //yRotation = Mathf.Clamp(yRotation, -90, 90);
+
+        playerBody.Rotate(Vector3.up * MouseX);
 
     }
 }
