@@ -32,6 +32,8 @@ public class MouseRotate : MonoBehaviour
 
         //transform.localRotation = Quaternion.Euler(yRotation, 0, 0);
 
+        // yRotation = Mathf.Clamp(yRotation, -90, 90);
+        // transform.localRotation = Quaternion.Euler(yRotation, 0, 0);
         yRotation = Mathf.Clamp(yRotation, -90, 90);
         transform.localRotation = Quaternion.Euler(yRotation, 0, 0);
 
