@@ -25,18 +25,20 @@ public class PlayerMovement : MonoBehaviour
     {
         //float X = Input.GetAxis("Horizontal");
         //float Z = Input.GetAxis("Vertical");
+        //float X = Input.GetAxis("Horizontal");
+        //float Z = Input.GetAxis("Vertical");
         float X = Input.GetAxis("Horizontal");
         float Z = Input.GetAxis("Vertical");
-
         isGrounder = Physics.CheckSphere(groundcheck.position, GroundDistance, ground); //this is the isGrounder bool
 
         if(isGrounder && velocity.y <0)
         {
             velocity.y = -2f;
         }
-
         Vector3 move = transform.right * X + transform.forward * Z;
         controller.Move(move * speed * Time.deltaTime);
+        //Vector3 move = transform.right * X + transform.forward * Z;
+        //controller.Move(move * speed * Time.deltaTime);
 
         //Vector3 move = transform.right * X + transform.forward * Z; //forward is dealt by Z
 
