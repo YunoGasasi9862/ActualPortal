@@ -23,10 +23,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //float X = Input.GetAxis("Horizontal");
-        //float Z = Input.GetAxis("Vertical");
-        //float X = Input.GetAxis("Horizontal");
-        //float Z = Input.GetAxis("Vertical");
+    
         float X = Input.GetAxis("Horizontal");
         float Z = Input.GetAxis("Vertical");
         isGrounder = Physics.CheckSphere(groundcheck.position, GroundDistance, ground); //this is the isGrounder bool
@@ -37,13 +34,7 @@ public class PlayerMovement : MonoBehaviour
         }
         Vector3 move = transform.right * X + transform.forward * Z;
         controller.Move(move * speed * Time.deltaTime);
-        //Vector3 move = transform.right * X + transform.forward * Z;
-        //controller.Move(move * speed * Time.deltaTime);
-
-        //Vector3 move = transform.right * X + transform.forward * Z; //forward is dealt by Z
-
-        //controller.Move(move * speed * Time.deltaTime);
-
+     
        if(Input.GetKey(KeyCode.Space))
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
@@ -51,9 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
-        //velocity.y += gravity * Time.deltaTime;
-
-        //controller.Move(velocity * Time.deltaTime);
+       
 
 
     }
